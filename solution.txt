@@ -11,7 +11,7 @@ docker run -d \
 
 # Prepare the host directory and copy the file
 mkdir -p /opt/data
-cp /tmp/sample.txt /opt/data/
+sudo cp /tmp/sample.txt /opt/data/
 
 # Verify the running container
 docker ps
