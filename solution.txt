@@ -1,0 +1,21 @@
+#ssh to stapp01 then:wq
+
+# Pull the nginx image
+docker pull nginx:latest
+
+# Create and run the container with volume mapping
+docker run -d \
+  --name ecommerce \
+  -v /opt/data:/home \
+  nginx:latest
+
+# Prepare the host directory and copy the file
+mkdir -p /opt/data
+cp /tmp/sample.txt /opt/data/
+
+# Verify the running container
+docker ps
+
+# Check the content in the container
+docker exec -it ecommerce ls /home
+
